@@ -1,0 +1,10 @@
+@import './_variables';
+
+.body__container {
+    width: $containerWidth;
+    min-height: $bodyWidth;
+    position: relative;
+    background-repeat: repeat;
+    margin: auto;
+    margin-top: 31px;
+}

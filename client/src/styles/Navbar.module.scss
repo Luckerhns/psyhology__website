@@ -1,0 +1,62 @@
+@import "_variables";
+@import "_fonts";
+
+.header {
+  width: $containerWidth;
+  margin: auto;
+  height: 100px;
+
+  .second__header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid $border;
+
+    .second__grid {
+      width: 95%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: $mainFontSize;
+
+      span {
+        font-weight: 100;
+      }
+
+      .header__logo {
+        font-family: $logoFont;
+        margin-right: 2.5px;
+        font-size: $logoFontSize;
+      }
+    }
+  }
+
+  .main__header {
+    width: 100%;
+    border-bottom: 1px solid $border;
+
+    .header__container {
+      width: 95%;
+      margin: auto;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            color: red;
+        }
+      }
+    }
+  }
+}
