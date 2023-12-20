@@ -1,15 +1,18 @@
+import AboutmePage from "../pages/ru/AboutmePage";
 import MainPage from "../pages/ru/MainPage";
+import RecordPage from "../pages/ru/RecordPage";
 import TherapyPage from "../pages/ru/TherapyPage";
-import UserPage from "../pages/ru/UserPage";
 import { IRoute } from "../types/routes";
-import { PublicRoutesEnum } from "./consts";
+import { PrivateRoutesEnum, PublicRoutesEnum } from "./consts";
 
 export const publicRoutes: IRoute[] = [
   { path: PublicRoutesEnum.MainPath, element: MainPage },
-  { path: PublicRoutesEnum.UserPath, element: UserPage },
   { path: PublicRoutesEnum.TherapyPath, element: TherapyPage },
+  { path: PublicRoutesEnum.AboutMePath, element: AboutmePage },
 ];
 
 export const privateRoutes = [
-  { path: PublicRoutesEnum.UserPath, element: UserPage },
+  { path: PrivateRoutesEnum.RecordPath, element: RecordPage },
+  { path: PublicRoutesEnum.MainPath, element: MainPage },
+  { path: PublicRoutesEnum.TherapyPath, element: TherapyPage },
 ];

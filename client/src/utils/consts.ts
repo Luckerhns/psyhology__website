@@ -4,8 +4,10 @@ export enum PublicRoutesEnum {
   UserPath = "/user",
   BasketPath = "/basket",
   FavoritesPath = "/favorites",
-  TherapyPath = '/therapy',
-  AboutMePath = '/aboutme'
+  TherapyPath = "/therapy",
+  AboutMePath = "/aboutme",
 }
 
-export enum PrivateRoutesEnum {}
+export enum PrivateRoutesEnum {
+  RecordPath = '/therapy/record'
+}

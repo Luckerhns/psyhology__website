@@ -9,7 +9,7 @@ export const registration = async (dto: {
   password: string;
   username: string;
 }) => {
-  const { data }: {data: any} = await $user.post<IUser[]>("api/user/registration", {
+  const { data }  = await $user.post<IUser[]>("api/user/registration", {
     email: dto.email,
     password: dto.password,
     username: dto.username,

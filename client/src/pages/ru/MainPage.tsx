@@ -4,6 +4,8 @@ import styles from "../../styles/MainPage.module.scss";
 import Question from "../../components/Question";
 import SliderComponent from "../../components/UI/Slider";
 import { rewards } from "../../utils/data";
+import { Link } from "react-router-dom";
+import { PrivateRoutesEnum } from "../../utils/consts";
 
 const MainPage = () => {
   return (
@@ -21,7 +23,7 @@ const MainPage = () => {
               записывайся уже сейчас!
             </div>
           </div>
-          <div className={styles.record__btn}>Записаться</div>
+          <Link to={PrivateRoutesEnum.RecordPath} className={styles.record__btn}>Записаться</Link>
         </div>
         <div className={styles.right__section}>
           <img src="#" alt="#" />

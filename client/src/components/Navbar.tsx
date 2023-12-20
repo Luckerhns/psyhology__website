@@ -40,7 +40,6 @@ const Navbar = () => {
     }
   };
   const { theme } = useTypedSelector((state) => state.theme);
-  console.log(theme);
   const [flag, setFlag] = useState("RU");
   return (
     <header className={styles.header}>

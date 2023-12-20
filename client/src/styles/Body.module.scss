@@ -1,5 +1,11 @@
 @import './_variables';
 
+@media screen and (max-width: 1000px) {
+  .body__Container {
+    background-color: black;
+  }
+}
+
 .body__container {
     width: $containerWidth;
     min-height: $bodyWidth;
