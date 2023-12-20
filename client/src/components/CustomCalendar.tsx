@@ -18,17 +18,45 @@ const CustomCalendar = () => {
   const [weekDay, setWeekDay] = useState(0);
   const [selectedDate, setSelectedDate] = useState("");
   const { openRecordModal, closeRecordModal } = useActions();
-  const [events, setEvents] = useState({
-    date: "2023-01-10",
-    username: "dsadsa",
-  });
+  const [events, setEvents] = useState([
+    {
+      date: "2023-01-10",
+      username: "dsadsa",
+      freeTimes: [
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+      ],
+      busyTimes: ["17:00", "18:00"],
+    },
+    {
+      date: "2023-01-12",
+      username: "dsadsa",
+      freeTimes: [
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+      ],
+      busyTimes: [
+        { time: "17:00", username: "Mamed" },
+        { time: "18:00", username: "Maga" },
+      ],
+    },
+  ]);
 
   const dateCellRender = (value: Dayjs) => {
     const formatedDate = value.format("YYYY-MM-DD");
     const events = {
       8: ["go home"],
     };
-    console.log(Object.entries(events).map((e) =>  <div>dasd</div>));
     return <div>dsadsa</div>;
   };
 
@@ -43,7 +71,6 @@ const CustomCalendar = () => {
     setSelectedValue(newValue);
     dateCellRender(newValue);
     setSelectedDate(newValue.format("YYYY-MM-DD"));
-    console.log(selectedDate)
   };
 
   useEffect(() => {
@@ -83,9 +110,25 @@ const CustomCalendar = () => {
             currentYear={currentDate.get("year")}
           />
         )}
-        dateCellRender={(date: any) => 
-          events.date === date.format("YYYY-MM-DD") ? <div>dadsad</div> : <></>
-        }
+        cellRender={(date: any) => {
+          let markUp = true;
+          return events.map((eventDate, key) => {
+            const busyTimesLength = eventDate.busyTimes.length;
+            const freeTimesLength = eventDate.freeTimes.length;
+            if (eventDate.date === date.format("YYYY-MM-DD")) {
+              markUp = true;
+              return (
+                <div key={key} className={styles.record__cell}>
+                  <div className={styles.cell}>
+                    Есть {freeTimesLength} свободных записей из{" "}
+                    {freeTimesLength + busyTimesLength} &#10003;
+                  </div>
+                </div>
+              );
+            } else {
+            }
+          });
+        }}
       />
     </div>
   );

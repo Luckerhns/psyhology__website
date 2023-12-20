@@ -45,7 +45,7 @@ const CalendarHeaderComponent = ({
           <div className={styles.date__year}>{year}</div>
           <Select
             size="small"
-            dropdownMatchSelectWidth={false}
+            popupMatchSelectWidth={false}
             value={monthsRuList[month]}
             onChange={(newMonth) => {
               const now = value.clone().month(newMonth);
